@@ -7,14 +7,21 @@ using Microsoft.Extensions.Logging;
 
 namespace server.Controllers
 {
-
     public class BlogController : ControllerBase
     {
+        private readonly BlogContext blogContext;
+        public List<Blog> blogs { get; set; }
+
+        public BlogController(){
+            blogContext = new BlogContext();
+        }
+
         [HttpGet]
         [Route("api/blogs")]
         public IEnumerable<Blog> Get()
         {
-            return FakeData.getBlogs();
+            blogs = blogContext.Blog.ToList();
+            return blogs;
         }
 
         [HttpPatch]
