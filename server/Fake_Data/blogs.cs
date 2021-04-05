@@ -40,5 +40,15 @@ namespace server
 
             return blogs;
         }
+
+        static public void PatchBlog(string id)
+        {
+            foreach (var item in blogs)
+            {
+                if(id == item._id){
+                    item.views++;
+                }
+            }
+        }
     }
 }

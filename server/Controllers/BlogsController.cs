@@ -7,15 +7,21 @@ using Microsoft.Extensions.Logging;
 
 namespace server.Controllers
 {
-    [ApiController]
-    [Route("api/blogs")]
+
     public class BlogController : ControllerBase
     {
         [HttpGet]
+        [Route("api/blogs")]
         public IEnumerable<Blog> Get()
         {
             return FakeData.getBlogs();
         }
 
+        [HttpPatch]
+        [Route("api/blogs/{id}")]
+        public void Patch(string id)
+        {
+            FakeData.PatchBlog(id);
+        }
     }
 }

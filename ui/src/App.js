@@ -2,6 +2,7 @@ import React from "react";
 
 import Post from "./components/Post";
 import Feed from "./components/Feed";
+import Admin from "./components/Admin";
 
 /*
   READ THESE COMMENTS AS A PART OF STEP TWO
@@ -57,6 +58,8 @@ class App extends React.Component {
       return <Feed blogs={this.state.blogs} handleClick={blog => this.changeView("post", blog)} />;
     } else if (view === "post") {
       return <Post blog={this.state.blog}/>;
+    } else if (view === "admin") {
+      return <Admin blogs={this.state.blogs}/>
     }
   }
 
@@ -95,7 +98,7 @@ class App extends React.Component {
             See all Posts
           </span>
           <span className="nav-unselected">Write a Post</span>
-          <span className="nav-unselected">Admin</span>
+          <span className="nav-unselected" onClick={() => this.changeView("admin")}>Admin</span>
         </div>
 
         <div className="main">{this.renderView()}</div>
