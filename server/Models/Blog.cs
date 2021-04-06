@@ -5,7 +5,7 @@ namespace server
 {
     public class Blog
     {
-        public DateTime createdAt { get; set; }
+        public DateTime created_At { get; set; }
 
         public int views { get; set; }
 

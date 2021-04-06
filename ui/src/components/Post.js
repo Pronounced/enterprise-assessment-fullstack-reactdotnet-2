@@ -4,7 +4,7 @@ import moment from 'moment';
 const Post = (props) => {
  
   useEffect(() => {
-    fetch(`https://127.0.0.1:5000/api/blogs/${props.blog._id}`, {
+    fetch(`http://127.0.0.1:5000/api/blogs/${props.blog._id}`, {
       method: 'PATCH'
     })
     .then(props.blog.views++);

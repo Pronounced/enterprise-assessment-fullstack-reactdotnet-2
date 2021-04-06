@@ -64,7 +64,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://127.0.0.1:5000/api/blogs")
+    fetch("http://127.0.0.1:5000/api/blogs")
     .then(response => response.json())
     .then(
       (result) => {
